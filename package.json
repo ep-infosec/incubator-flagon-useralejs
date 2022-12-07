@@ -1,0 +1,77 @@
+{
+  "name": "flagon-userale",
+  "version": "2.3.0",
+  "description": "UserALE.js is the UserALE client for DOM and JavaScript-based applications. It automatically attaches event handlers to log every user interaction on a web page, including rich JS single-page apps.",
+  "main": "build/userale-2.3.0.js",
+  "scripts": {
+    "lint": "eslint ./src --fix",
+    "pretest": "npm run lint && npm run clean && npm run build",
+    "test": "mocha --require @babel/register && npm run journey:ci",
+    "build": "rollup -c rollup.config.js",
+    "clean": "rm -r ./build",
+    "journey": "cypress run",
+    "journey:debug": "cypress open",
+    "journey:ci": "start-server-and-test example:run 8000 journey",
+    "example:run": "node example/server.js",
+    "example:watch": "nodemon -w ./example example/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://https://github.com/apache/incubator-flagon-useralejs"
+  },
+  "keywords": [
+    "UserALE",
+    "Logging",
+    "Log Analytics",
+    "Business Analytics",
+    "Usability",
+    "User Testing",
+    "Behavioral Analytics"
+  ],
+  "author": "Apache Flagon",
+  "contributors": [
+    "Clay Gimenez",
+    "Robert Foley",
+    "Michelle Beard",
+    "Alex Ford",
+    "Joshua C. Poore",
+    "Gedd Johnson"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/apache/incubator-flagon-useralejs/issues"
+  },
+  "homepage": "http://flagon.incubator.apache.org",
+  "engines": {
+    "node": "10.10.0 || 11.10.0 - 12.20.1 || >=13.7.0",
+    "npm": "6.4.1 || 6.7.0 - 6.12.1 || >=6.13.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-block-scoping": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/register": "^7.17.7",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "body-parser": "^1.19.1",
+    "chai": "^4.3.4",
+    "cypress": "^9.2.0",
+    "detect-browser": "^5.3.0",
+    "dom-storage": "^2.1.0",
+    "eslint": "^8.21.0",
+    "express": "^4.17.2",
+    "global-jsdom": "^8.2.0",
+    "jsdom": "^19.0.0",
+    "mocha": "^9.1.4",
+    "nodemon": "^2.0.13",
+    "rollup": "^2.77.3",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-license": "^2.8.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "sinon": "^14.0.0",
+    "start-server-and-test": "^1.14.0"
+  }
+}
